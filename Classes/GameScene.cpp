@@ -289,8 +289,6 @@ void GameScene::update(float delta)
 		}
 
 	}
-
-
 }
 
 void GameScene::keyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event)
