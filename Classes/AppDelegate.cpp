@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "BreakoutGameScene.h"
 #include "MenuScene.h"
+#include "GameScene.h"
 
 USING_NS_CC;
 
@@ -25,6 +26,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	//director->runWithScene(scene);-=
 
 	auto scene = BreakoutGameScene::createScene();
+	//auto scene = GameScene::createScene();
 	director->runWithScene(scene);
 
 	return true;
