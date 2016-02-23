@@ -1,6 +1,7 @@
 #pragma once
 
 #include "cocos2d.h"
+#include <iostream>
 
 
 
@@ -31,8 +32,14 @@ private:
 
 	cocos2d::Sprite* bg;
 	cocos2d::Sprite* bg2;
+	cocos2d::Sprite* scoreBar;
 
 	cocos2d::CCRect collObjBox;
+
+	cocos2d::Label* labelScore;
+	cocos2d::Label* labelMultiplier;
+
+	cocos2d::Label* labelCenterMessage;
 
 	//cocos2d::Sprite* wallX;
 	//cocos2d::Sprite* wallY1;
@@ -44,7 +51,16 @@ private:
 
 	int xVel;
 	int yVel;
+	int paddleSpeed;
+	int paddleBallAngleCF;
+	int score;
+	int scoreMultiplier;
+	int hitStreak;
 
 	bool leftDown;
 	bool rightDown;
+
+	bool gameHold;
+
+	bool slow;
 };
