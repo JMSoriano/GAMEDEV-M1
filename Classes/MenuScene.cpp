@@ -1,5 +1,7 @@
 #include "MenuScene.h"
-#include "GameScene.h"
+#include "BreakoutGameScene.h"
+#include "SimpleAudioEngine.h" 
+
 
 USING_NS_CC;
 
@@ -21,6 +23,9 @@ bool MenuScene::init()
 		return false;
 	}
 
+	auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+	audio->preloadEffect("menuMusic.wav");
+
 	/*auto label = Label::createWithSystemFont("Hello World", "Arial", 96);
 	label->setAnchorPoint(cocos2d::Vec2(0.0, 0.0));
 	this->addChild(label, 1);*/
@@ -37,6 +42,8 @@ bool MenuScene::init()
 
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(keyboardListener, this);
 
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("menuMusic.mp3");
+
 	return true;
 }
 
@@ -44,7 +51,9 @@ void MenuScene::keyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Eve
 {
 	if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
 	{
-		auto newScene = GameScene::createScene();
+		auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+		audio->stopAllEffects();
+		auto newScene = BreakoutGameScene::createScene();
 		Director::getInstance()->replaceScene(newScene);
 	}
 }

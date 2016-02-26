@@ -33,6 +33,7 @@ private:
 	cocos2d::Sprite* bg;
 	cocos2d::Sprite* bg2;
 	cocos2d::Sprite* scoreBar;
+	cocos2d::Sprite* livesIcon;
 
 	cocos2d::CCRect collObjBox;
 
@@ -40,6 +41,10 @@ private:
 	cocos2d::Label* labelMultiplier;
 
 	cocos2d::Label* labelCenterMessage;
+
+	cocos2d::Label* labelLives;
+	cocos2d::Label* labelGameOverScore;
+	cocos2d::Label* labelGameOverMessage;
 
 	//cocos2d::Sprite* wallX;
 	//cocos2d::Sprite* wallY1;
@@ -56,6 +61,10 @@ private:
 	int score;
 	int scoreMultiplier;
 	int hitStreak;
+	int lives;
+
+	int holdTime;
+	int currHoldTime;
 
 	bool leftDown;
 	bool rightDown;
@@ -63,4 +72,5 @@ private:
 	bool gameHold;
 
 	bool slow;
+	bool gameOver;
 };
